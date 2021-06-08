@@ -1,0 +1,89 @@
+<section class="case-study marginTop features head "  id="careers">
+  <div class="text-center">
+    <h2 class="my-4 h1 text-center">Careers</h2>
+</div>
+<span class="dot-dash dark">.</span>
+    <div class="row">
+      <div [ngClass]="showApplyCard? 'col-sm-6': 'col-sm-12'" >
+        <div class="card text-center">
+          <div class="h5 text-center">Embark on the journey</div>
+          <div class="card-body">
+            <p class="grey-text">At the heart of our success is a group of people who are passionate about technology,<br>
+               programming and human interactions with demanding customers and colleagues.</p>
+            <div style="height:15px"></div>
+            <div class="card-footer text-muted">Do you have what it takes and want to be part of this adventure?</div>
+            <p routerLinkActive="active"><a class="btn btn-primary " role="button" (click)="onClick()" >Join us</a></p>
+          </div>
+        </div>
+      </div>
+      <div [ngClass]="!showApplyCard? 'd-none': ''" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+        <div class="card">
+          <div class="card-body collapse show" id="detailed-view">
+            <div>
+              <ul role="tablist" class="nav nav-tabs">
+                <li role="presentation" class="nav-item"><a role="tab" data-toggle="tab" class="nav-link active"
+                    href="#tab-1">Job offers</a></li>
+                <!-- <li role="presentation" class="nav-item"><a role="tab" data-toggle="tab" class="nav-link"
+                    href="#tab-2">Spontaneous</a></li> -->
+              </ul>
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tab-1">
+                  <div class="panel-body">
+                    <table class="table table-striped table-bordered table-list">
+                      <thead>
+                        <tr>
+                          <th>Title</th>
+                          <th class="hidden-xs">Competence & qualification</th>
+                          <th>Contract type</th>
+                          <th>Status</th>
+                          <th>Option</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Developer Engineer</td>
+                          <td>Bac +5</td>
+                          <td>Short term</td>
+                          <td>open</td>
+                          <td class="align">
+                             <button type="button" (click)="openCandidature()"class="btn btn-primary"><em>Apply</em></button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>DevOps Engineer</td>
+                          <td>Bac +5 / Certificaton DevOps</td>
+                          <td>Long term</td>
+                          <td>open</td>
+                          <td class="align">
+                             <button type="button" (click)="openCandidature()"class="btn btn-primary"><em>Apply</em></button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Account Manager</td>
+                          <td>Bac +5 / certificaton PMP</td>
+                          <td>Long term</td>
+                          <td>open</td>
+                          <td class="align">
+                             <button type="button" (click)="openCandidature()"class="btn btn-primary"><em>Apply</em></button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Sales representative</td>
+                          <td>Bac +5</td>
+                          <td>Stage</td>
+                          <td>open</td>
+                          <td class="align">
+                             <button type="button" (click)="openCandidature()"class="btn btn-primary"><em>Apply</em></button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

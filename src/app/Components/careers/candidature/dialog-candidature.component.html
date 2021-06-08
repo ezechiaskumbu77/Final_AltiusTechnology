@@ -1,0 +1,58 @@
+ 
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modal-title">Candidature Spontanée</h4>
+                                    <button type="button" (click)="modal.dismiss()" class="close" aria-label="Close button"
+                                        aria-describedby="modal-title">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                 
+                                <form [formGroup]="careerForm" class="modal-body"  enctype="multipart/form-data" (submit)="onSubmit()">
+
+                                    <label for="Name">Name</label>
+                                    <div class="inputWithIcon">
+                                        <input class='form-control required' type="text" formControlName="Name" placeholder=" John" required /><i class="fa fa-user fa-lg fa-fw"></i>
+                                    </div>
+
+                                    <label for="Lastname">Lastname</label>
+                                    <div class="inputWithIcon">
+                                        <input class=' form-control'  type="text"  formControlName="Lastname" placeholder=" John" required/><i class="fa fa-user fa-lg fa-fw"></i>
+                                    </div>
+
+                                    <label for="Email">Email <i class="fa fa-envelope fa-lg fa-fw mr-2"></i></label>
+                                    <div class="inputWithIcon">
+                                        <input class='form-control'  type="email"   formControlName="Email" placeholder="  Email" required/>
+                                        
+                                    </div> 
+                                    <br>
+                                    <label for="Lastname">Upload your CV  <i class="fa fa-upload fa-lg fa-fw mr-4"></i></label>
+                                    <div class="inputWithIcon">
+                                        <input class=' form-control' id='CvFile' name='CvFile'  #CvFile  type="file"   formControlName="CvFile" (change)="selectFile($event)"  required/>
+                                    </div>
+                                    
+                                    <br>
+                                    
+                                    <label for="subject">Subject</label>
+                                    <textarea   formControlName="Subject" placeholder="Write something.." style="height: 200px;"></textarea>
+                                    
+                                    
+                                    <br>
+                                
+                                    <div *ngIf="showloading!=false"   class='mt-3 mb-3 text-info font-weight-bold' role='alert' >Soumission en cours ...</div>
+                                    <div *ngIf="showsuccess!=false"   class='mt-3 mb-3  alert alert-success' role='alert' >Soumis avec succès</div>
+                                    <div *ngIf="showfaillure!=false"  class=' mt-3 mb-3 alert alert-danger' role='alert' >Echec lors de la soumission</div>
+                                    
+                                </form>
+ 
+                                <div class="modal-footer ">
+                                    <button type="button"  class="btn btn-outline-dark" (click)="modal.dismiss()">Fermer</button>
+                                    <!-- <button role="button" 
+                                    
+                                    type="submit" class="btn btn-primary">Envoyer</button> -->
+                                    <button type="submit" ngbAutofocus class="btn btn-primary"  [disabled]="!selectedFiles || !careerForm.valid" (click)="upload()">
+                                        Submit</button> 
+                                    <!-- (click)="onSubmit()" [attr.disabled]="careerForm.valid  ? null: true" -->
+                                </div>
+                
+
+

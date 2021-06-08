@@ -1,0 +1,35 @@
+<div  id="footer" class="bg-color-blue" style="height: 100%;">
+  <div class="container" >
+      <div class="row">
+          <div class="marge col-lg-2 col-md-2 colonne1 offset-sm-1">
+              <img src="./assets/img/Logo2.png" class="img-fluid" />
+          </div>
+          <div class="margin-top col-lg-2 col-md-2 colonne2">
+            <p class="logo-txt" >Altius Technology Sarl Avenue OUA 01 (Concession Procoki), Ngaliema, Kinshasa
+            </p>
+        </div>
+        <div class="margin-top col-lg-2 col-md-2 colonne2">
+          <ul class="">
+            <li class="texte" *ngFor="let option of footerHome">
+                <a href="{{ option.href }}" (click)="jumpTo(option.href); false" class="text-light texte" >{{option.title}}</a>
+            </li>
+        </ul>
+      </div>
+          <div class="margin-top col-lg-2 col-md-2 colonne3 ">
+              <ul class="">
+                  <li class="" *ngFor="let option of footerCommunity">
+                      <a href="{{ option.href }}" (click)="jumpTo(option.href); false" class="text-light texte" >{{option.title}}</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="margin-top col-lg-3 col-md-3 colonne4 ">
+              <h6 class="text-light texte">Follow us on:</h6>
+              <ul class="info-share">
+                  <li class="text-light margin-left" *ngFor="let option of socialNavItems">
+                      <a href="{{ option.href }}" class="" [innerHTML]="option.icon"></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
